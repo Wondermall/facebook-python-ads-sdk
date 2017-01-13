@@ -57,10 +57,7 @@ class FacebookSession(object):
         self.proxies = proxies
 
         self.requests = requests.Session()
-        self.requests.verify = os.path.join(
-            os.path.dirname(__file__),
-            'fb_ca_chain_bundle.crt',
-        )
+        self.requests.verify = False
         params = {
             'access_token': self.access_token
         }
